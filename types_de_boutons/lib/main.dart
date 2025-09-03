@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ⚡️ importe tes fichiers
 import 'types_de_boutons.dart';
 import 'calculator_page.dart';
-// import 'exo3.dart'; // tu pourras ajouter ton 3ème fichier plus tard
+import 'exo3_calculatrice.dart';
 
 void main() => runApp(const MyApp());
 
@@ -60,12 +60,13 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // TODO: remplacer par ta 3ème page
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Exercice 3 pas encore dispo")),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const SimpleCalculatorPage()),
                 );
               },
-              child: const Text("Exercice 3 : À venir"),
+              child: const Text("Exercice 3 : Calculatrice (radios)"),
             ),
           ],
         ),
